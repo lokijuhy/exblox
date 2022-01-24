@@ -12,8 +12,10 @@ An ExBlox machine learning `Experiment` is built from 6 components:
 5. A `Tuner`, which governs hyperparameter search.
 6. A list of `Metrics` that the model is evaluated on.
 
-Each of these _components_ has a few `flavors` you can pick from, for example, you might choose a `TrainTestStratifier` or a `PartitionedLabelStratifier`.
-Each component also needs a `config`. For example, for a `TrainTestStratifier`, you'll need to tell it what `test_split_size` to use, or for the `PartitionedLabelStratifier`, the number of partitions.
+Each of these _components_ has a few `flavors` you can pick from. For example, you might choose either a `TrainTestStratifier` or a `PartitionedLabelStratifier`.
+
+Each component also needs a `config`. For example, for a `TrainTestStratifier`, you'll need to tell it what `test_split_size` to use. Or, for the `PartitionedLabelStratifier`, the number of partitions.
+
 Once you've selected each component's flavor and configured it, just mix them together in an `Experiment`, and call `go()`!
 
 ![ExBlox Class Diagram](ExBloxClassDiagram.svg)
