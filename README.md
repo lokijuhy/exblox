@@ -41,13 +41,14 @@ This approach has the advantage of providing a single point of truth for everyth
 ### Create an `Experiment` from objects
 
 ```python
-from dataset import DataSet
-from stratifier import TrainTestStratifier
-from sklearn.ensemble import RandomForestClassifier
-from trainer import Trainer
-from tuner import RandomSearchTuner
-from metric import F1_Macro, AUPRC
-from experiment import Experiment
+import exblox
+from exblox.dataset import DataSet
+from exblox.stratifier import TrainTestStratifier
+from exblox.sklearn.ensemble import RandomForestClassifier
+from exblox.trainer import Trainer
+from exblox.tuner import RandomSearchTuner
+from exblox.metric import F1_Macro, AUPRC
+from exblox.experiment import Experiment
 
 # =====  1. DATASET =====
 df = pd.read_csv(data_path)
@@ -97,7 +98,7 @@ When defining an Experiment via a config, all components and their configuration
 The only object that is not configured here is the dataframe- that is passed to Experiment separately.
 
 ```python
-from experiment import Experiment
+from exblox.experiment import Experiment
 
 config = {
         'DataSet': {
@@ -195,7 +196,7 @@ preds_proba = exp.final_predictor.predict_proba(data_set.x)
 ## Appendix
 
 ### Configuring an sklearn Pipeline
-
+Example YAML configuration:
 ```yaml
 Architecture:
     flavor: Pipeline
